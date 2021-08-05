@@ -1,0 +1,63 @@
+{
+  "name": "React-UI",
+  "version": "1.0.0",
+  "description": "React,Redux UI framework",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watchAll",
+    "start": "npm run build && node server.js",
+    "build": "webpack",
+    "dev": "webpack-dev-server -d --hot  --config webpack.config.js"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/core": "^7.1.0",
+    "@babel/preset-env": "^7.2.3",
+    "@babel/preset-react": "^7.0.0",
+    "@fortawesome/fontawesome-svg-core": "^1.2.35",
+    "@fortawesome/free-solid-svg-icons": "^5.15.3",
+    "@fortawesome/react-fontawesome": "^0.1.14",
+    "@khanacademy/react-multi-select": "^0.3.2",
+    "antd": "^3.12.4",
+    "axios": "^0.21.1",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-loader": "^8.0.0-beta",
+    "bootstrap": "^4.6.0",
+    "css-loader": "^2.1.0",
+    "expect": "^23.6.0",
+    "express": "^4.16.4",
+    "font-awesome": "^4.7.0",
+    "formik": "^2.2.9",
+    "node-env-file": "^0.1.8",
+    "react": "^17.0.2",
+    "react-bootstrap": "^1.6.0",
+    "react-bootstrap-table-next": "^4.0.3",
+    "react-dom": "^17.0.2",
+    "react-redux": "^7.2.4",
+    "react-router-dom": "^5.2.0",
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0",
+    "script-loader": "^0.7.2",
+    "style-loader": "^0.23.1",
+    "uglifyjs-webpack-plugin": "^2.1.1",
+    "webpack": "^4.29.0",
+    "webpack-cli": "^3.2.1",
+    "yup": "^0.32.9"
+  },
+  "devDependencies": {
+    "enzyme": "^3.8.0",
+    "enzyme-adapter-react-16": "^1.7.1",
+    "enzyme-to-json": "^3.3.5",
+    "jest": "^23.6.0",
+    "node-sass": "^4.14.1",
+    "redux-devtools-extension": "^2.13.9",
+    "redux-mock-store": "^1.5.3",
+    "sass-loader": "^10.1.1",
+    "webpack-dev-server": "^3.1.14"
+  },
+  "browserslist": [
+    "last 1 Chrome version"
+  ]
+}

@@ -1,0 +1,19 @@
+
+@media (max-width: 768px) {
+    .main-panel {
+      width: 100%;
+      .content {
+        padding: 0.8rem 1.3rem 0.8rem 1.3rem;
+      }
+    }
+  
+    .sidebar-header {
+      .nav-close {
+        opacity: 1;
+      }
+    }
+  
+    .sidebar.nav {
+      z-index: 200;
+    }
+}
