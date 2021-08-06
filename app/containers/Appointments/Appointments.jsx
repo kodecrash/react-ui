@@ -10,17 +10,27 @@ class Appointments extends Component {
         super(props);
         this.columns = [{
             dataField: 'patientName',
-            text: 'Patient Name'
+            text: 'Patient Name',
+            sort: true
         }, {
             dataField: 'startTime',
-            text: 'Start Time'
+            text: 'Start Time',
+            sort: true
         }, {
             dataField: 'endTime',
-            text: 'End Time'
+            text: 'End Time',
+            sort: true
         }, {
             dataField: 'statusText',
             text: 'Status'
         }];
+
+        this.options =  {
+            // pageStartIndex: 0,
+            sizePerPage: 5,
+            hideSizePerPage: true,
+            hidePageListOnlyOnePage: true
+        };
 
     }
 
@@ -50,7 +60,9 @@ class Appointments extends Component {
                         <ul className="list-group">
                             {
                                 (this.props.appointments && this.props.appointments.length > 0) ?
-                                    <Table id="appointemt-list" columns={this.columns} data={this.props.appointments} /> : null
+                                    <Table id="appointemt-list"
+                                     columns={this.columns} data={this.props.appointments} 
+                                    config={this.options}/> : null
 
                             }
                         </ul>

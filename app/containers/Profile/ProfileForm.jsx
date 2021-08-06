@@ -29,7 +29,7 @@ const ProfileForm = (props) => {
 
     return (
         <>
-            <Formik>
+            <Formik enableReinitialize >
                 <Form  onSubmit={profileFormik.handleSubmit}>
                     <Row>
                         <Col md="3">

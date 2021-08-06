@@ -9,6 +9,12 @@ export const profileReducer = (state = initialState, action) => {
     case actionTypes.SAVE_PROFILE:
       return action.payload;
 
+    case actionTypes.GET_PROFILE_SUCCESS:
+      return action.payload;
+
+    case actionTypes.GET_PROFILE_FAILED:
+      return action.payload;
+
     default:
       return state;
   }

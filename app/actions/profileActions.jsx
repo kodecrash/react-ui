@@ -20,3 +20,23 @@ export const saveProfile = (profileData) => async (dispatch) => {
       });
     }
 };
+
+
+export const getProfile = () => async (dispatch) => {
+  try {
+    const res = await profileService.getProfile();
+    if (res) {
+      dispatch({
+        type: actionTypes.GET_PROFILE_SUCCESS,
+        payload: res.data,
+      });
+    }
+    
+  } catch (err) {
+    console.log(err);
+    dispatch({
+      type: actionTypes.GET_PROFILE_FAILED,
+      payload: null,
+    });
+  }
+};
