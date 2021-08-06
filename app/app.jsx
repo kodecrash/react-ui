@@ -1,4 +1,4 @@
-import React, {useEffect } from 'react'
+import React, {useEffect, useState } from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 import bootstrap from '../node_modules/bootstrap/dist/css/bootstrap.min.css';
@@ -14,11 +14,16 @@ import Dashboard from './containers/Dashboard/Dashboard';
 import Appointments from './containers/Appointments/Appointments';
 import ManageUsers from './containers/ManageUsers/ManageUsers';
 import Profile from './containers/Profile/Profile';
+import Login from './containers/Login/Login';
 
 const store = configure();
 const App = (props) =>  {
 
- // const [isSideNavOpen, setIsSideNavOpen] = useState(false);
+  const [token, setToken] = useState();
+
+  if(!token) {
+    return <Login setToken={setToken} />
+  }
 
   const  { isSideNavOpen } = useSelector(state => state.sidenav);
   const dispatch = useDispatch();
