@@ -19,11 +19,9 @@ import Login from './containers/Login/Login';
 const store = configure();
 const App = (props) =>  {
 
-  const [token, setToken] = useState();
+  const [token, setToken] = useState(false);
 
-  if(!token) {
-    return <Login setToken={setToken} />
-  }
+  
 
   const  { isSideNavOpen } = useSelector(state => state.sidenav);
   const dispatch = useDispatch();
@@ -48,21 +46,25 @@ const App = (props) =>  {
      
   return (
     <BrowserRouter>
-      <div className="wrapper">
-        <SideNav isOpen={isSideNavOpen} />
-        <div className="main-panel">
-          <Header toggleSideNav={toggleSideNav} />
-          <div className="content">
-            <Switch>
-              <Route exact path={["/", "/dashboard"]} component={Dashboard} />
-              <Route exact path="/appointments" component={Appointments} />
-              <Route path="/manageusers" component={ManageUsers} />
-              <Route path="/profile" component={Profile} />
-            </Switch>
-          </div>
+    {
+      (!token)? <Login setToken={setToken} />:  (<div className="wrapper">
+      <SideNav isOpen={isSideNavOpen} />
+      <div className="main-panel">
+        <Header toggleSideNav={toggleSideNav} />
+        <div className="content">
+          <Switch>
+            <Route exact path={["/", "/dashboard"]} component={Dashboard} />
+            <Route exact path="/appointments" component={Appointments} />
+            <Route path="/manageusers" component={ManageUsers} />
+            <Route path="/profile" component={Profile} />
+          </Switch>
         </div>
-        <Overlay show={isSideNavOpen} touch={toggleSideNav} />
       </div>
+      <Overlay show={isSideNavOpen} touch={toggleSideNav} />
+    </div>)
+      
+    }
+     
     </BrowserRouter>
   )
 }

@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import {connect} from 'react-redux';
 import { Formik, useFormik } from "formik";
 import { Button, Row, Col, Form } from 'react-bootstrap';
 import * as yup from 'yup';
@@ -52,7 +51,7 @@ const LoginForm = (props) => {
                                 <label><strong>Password</strong></label>
                                 <Form.Control
                                     placeholder="Password here"
-                                    type="text"
+                                    type="password"
                                     name="password"
                                     isInvalid={!!LoginFormik.errors.password}
                                     onChange={LoginFormik.handleChange}

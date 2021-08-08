@@ -7,6 +7,7 @@ import { userReducer } from '../reducers/userReducer';
 import { appointmentsReducer } from '../reducers/appointmentsReducer';
 import { composeWithDevTools } from "redux-devtools-extension";
 import { profileReducer } from "../reducers/profileReducer";
+import { authReducer } from "../reducers/authReducer";
 
 const configure = (initialState = {}) => {
 
@@ -16,7 +17,8 @@ const configure = (initialState = {}) => {
     sidenav: sideNavReducer,
     users: userReducer,
     appointments: appointmentsReducer,
-    profile: profileReducer
+    profile: profileReducer,
+    auth: authReducer
   });
 
   const store = redux.createStore(reducer, initialState, composeWithDevTools(
